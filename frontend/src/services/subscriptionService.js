@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API = "http://localhost:5001/api/subscriptions";
+const API = "https://bushel-backend.onrender.com/api/subscriptions";
 
 // Get all subscriptions
 export const getSubscriptions = async (token) => {

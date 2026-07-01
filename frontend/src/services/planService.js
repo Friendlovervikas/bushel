@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API = "http://localhost:5001/api/plans";
+const API = "https://bushel-backend.onrender.com/api/plans";
 
 // Get all plans
 export const getPlans = async () => {

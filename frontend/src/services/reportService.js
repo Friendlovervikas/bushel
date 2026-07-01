@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API = "http://localhost:5001/api/reports";
+const API = "https://bushel-backend.onrender.com/api/reports";
 
 // ================= ORDERS REPORT =================
 

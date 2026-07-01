@@ -21,7 +21,7 @@ function Login() {
       setLoading(true);
 
       const { data } = await axios.post(
-        "http://localhost:5001/api/auth/login",
+        "https://bushel-backend.onrender.com/api/auth/login",
         {
           email: loginId,
           password,
@@ -68,7 +68,7 @@ function Login() {
   const googleSuccess = async (credentialResponse) => {
   try {
     const { data } = await axios.post(
-      "http://localhost:5001/api/auth/google-login",
+      "https://bushel-backend.onrender.com/api/auth/google-login",
       {
         credential: credentialResponse.credential,
       }
@@ -112,7 +112,7 @@ const googleLogin = useGoogleLogin({
   onSuccess: async (tokenResponse) => {
     try {
       const { data } = await axios.post(
-        "http://localhost:5001/api/auth/google-login",
+        "https://bushel-backend.onrender.com/api/auth/google-login",
         {
           accessToken: tokenResponse.access_token,
         }

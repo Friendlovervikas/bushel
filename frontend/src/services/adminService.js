@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API = "http://localhost:5001/api/admin";
+const API = "https://bushel-backend.onrender.com/api/admin";
 
 // ================= GET DASHBOARD =================
 

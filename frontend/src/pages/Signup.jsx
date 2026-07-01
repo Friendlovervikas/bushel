@@ -39,7 +39,7 @@ function Signup() {
       setLoading(true);
 
       const { data } = await axios.post(
-        "http://localhost:5001/api/auth/register",
+        "https://bushel-backend.onrender.com/api/auth/register",
         {
           name,
           phone,
@@ -73,7 +73,7 @@ function Signup() {
   onSuccess: async (tokenResponse) => {
     try {
       const { data } = await axios.post(
-        "http://localhost:5001/api/auth/google-login",
+        "https://bushel-backend.onrender.com/api/auth/google-login",
         {
           accessToken: tokenResponse.access_token,
         }

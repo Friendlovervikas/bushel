@@ -13,7 +13,7 @@ function ForgotPassword() {
       setLoading(true);
 
       const { data } = await axios.post(
-        "http://localhost:5001/api/auth/forgot-password",
+        "https://bushel-backend.onrender.com/api/auth/forgot-password",
         { email }
       );
 

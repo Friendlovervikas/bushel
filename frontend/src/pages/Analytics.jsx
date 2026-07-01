@@ -50,7 +50,7 @@ function Analytics() {
     try {
 
       const response = await axios.get(
-        `http://localhost:5001/api/reports/${type}`,
+        `https://bushel-backend.onrender.com/api/reports/${type}`,
         {
           headers: {
             Authorization: `Bearer ${user.token}`,

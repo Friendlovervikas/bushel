@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API = "http://localhost:5001/api/users";
+const API = "https://bushel-backend.onrender.com/api/users";
 
 // Get Profile
 export const getProfile = async (token) => {

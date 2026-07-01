@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API = "http://localhost:5001/api/notifications";
+const API = "https://bushel-backend.onrender.com/api/notifications";
 
 // ================= GET MY NOTIFICATIONS =================
 

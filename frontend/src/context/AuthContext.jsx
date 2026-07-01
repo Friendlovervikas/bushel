@@ -24,7 +24,7 @@ export const AuthProvider = ({ children }) => {
 
       try {
         const { data } = await axios.get(
-          "http://localhost:5001/api/users/profile",
+          "https://bushel-backend.onrender.com/api/users/profile",
           {
             headers: {
               Authorization: `Bearer ${storedUser.token}`,
@@ -70,7 +70,7 @@ export const AuthProvider = ({ children }) => {
   const login = async (userData) => {
     try {
       const { data } = await axios.get(
-        "http://localhost:5001/api/users/profile",
+        "https://bushel-backend.onrender.com/api/users/profile",
         {
           headers: {
             Authorization: `Bearer ${userData.token}`,
