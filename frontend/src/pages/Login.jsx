@@ -68,7 +68,7 @@ function Login() {
   const googleSuccess = async (credentialResponse) => {
   try {
     const { data } = await axios.post(
-      "https://bushel-backend.onrender.com/api/auth/google-login"
+      "https://bushel-backend.onrender.com/api/auth/google-login",
       {
         credential: credentialResponse.credential,
       }
