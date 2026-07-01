@@ -190,15 +190,10 @@ const googleLogin = useGoogleLogin({
           </label>
 
   <input
-  type="tel"
-  placeholder="Mobile Number"
+  type="text"
+  placeholder="Email or Mobile Number"
   value={loginId}
-  onChange={(e) =>
-    setLoginId(
-      e.target.value.replace(/\D/g, "").slice(0, 10)
-    )
-  }
-  maxLength={10}
+  onChange={(e) => setLoginId(e.target.value)}
   required
   className="w-full border border-gray-300 rounded-xl p-4 focus:outline-none focus:ring-2 focus:ring-green-500"
 />
