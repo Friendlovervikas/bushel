@@ -67,7 +67,7 @@ function Login() {
   };
   const googleSuccess = async (credentialResponse) => {
   try {
-    const { data } = await axios.post(
+    const { data } = await API.post(
       "/auth/google-login",
       {
         credential: credentialResponse.credential,
@@ -111,7 +111,7 @@ const googleLogin = useGoogleLogin({
 
   onSuccess: async (tokenResponse) => {
     try {
-      const { data } = await axios.post(
+      const { data } = await API.post(
         "/auth/google-login",
         {
           accessToken: tokenResponse.access_token,
