@@ -21,12 +21,12 @@ function Login() {
       setLoading(true);
 
       const { data } = await axios.post(
-        "http://localhost:5001/api/auth/login",
-        {
-          email: loginId,
-          password,
-        }
-      );
+  "https://bushel-backend.onrender.com/api/auth/login",
+  {
+    email: loginId,
+    password,
+  }
+);
       console.log("LOGIN RESPONSE:", data);
 
       login(data);
