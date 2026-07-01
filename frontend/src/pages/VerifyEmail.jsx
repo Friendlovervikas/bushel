@@ -19,7 +19,7 @@ function VerifyEmail() {
     const verify = async () => {
       try {
         const { data } = await axios.get(
-          `http://localhost:5001/api/auth/verify-email/${token}`
+          `https://bushel-backend.onrender.com/api/auth/verify-email/${token}`
         );
 
         setSuccess(true);

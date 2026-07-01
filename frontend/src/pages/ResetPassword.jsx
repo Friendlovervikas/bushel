@@ -29,7 +29,7 @@ function ResetPassword() {
       setLoading(true);
 
       const { data } = await axios.put(
-        `http://localhost:5001/api/auth/reset-password/${token}`,
+        `https://bushel-backend.onrender.com/api/auth/reset-password/${token}`,
         {
           password,
         }

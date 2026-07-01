@@ -46,7 +46,7 @@ function Checkout() {
   //   const fetchPlan = async () => {
   //     try {
   //       const { data } = await axios.get(
-  //         `http://localhost:5001/api/plans/${planId}`
+  //         `https://bushel-backend.onrender.com/api/plans/${planId}`
   //       );
 
   //       setSelectedPlan(data);

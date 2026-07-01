@@ -7,7 +7,7 @@ const [plans, setPlans] = useState([]);
 
 useEffect(() => {
 axios
-.get("http://localhost:5001/api/plans")
+.get("https://bushel-backend.onrender.com/api/plans")
 .then((res) => {
 setPlans(res.data);
 })

@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API = "http://localhost:5001/api/payments";
+const API = "https://bushel-backend.onrender.com/api/payments";
 
 // ================= GET MY PAYMENTS =================
 

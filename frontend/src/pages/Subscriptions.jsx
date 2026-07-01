@@ -19,7 +19,7 @@ function Subscriptions() {
   // const loadSubscriptions = async () => {
   //   try {
   //     const { data } = await axios.get(
-  //       "http://localhost:5001/api/subscriptions",
+  //       "https://bushel-backend.onrender.com/api/subscriptions",
   //       {
   //         headers: {
   //           Authorization: `Bearer ${user.token}`,

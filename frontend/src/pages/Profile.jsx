@@ -111,7 +111,7 @@ function Profile() {
       try {
 
         await axios.put(
-          "http://localhost:5001/api/users/change-password",
+          "https://bushel-backend.onrender.com/api/users/change-password",
           passwordData,
           {
             headers: {
