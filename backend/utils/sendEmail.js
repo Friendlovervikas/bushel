@@ -2,17 +2,21 @@ import nodemailer from "nodemailer";
 
 const sendEmail = async (options) => {
   try {
-    console.log("Connecting to Gmail...");
-    await transporter.verify();
-console.log("SMTP connection verified");
-
     const transporter = nodemailer.createTransport({
       service: "gmail",
       auth: {
         user: process.env.EMAIL_USER,
         pass: process.env.EMAIL_PASS,
       },
+      connectionTimeout: 10000,
+      greetingTimeout: 10000,
+      socketTimeout: 10000,
     });
+
+    console.log("Connecting to Gmail...");
+
+    await transporter.verify();
+    console.log("SMTP connection verified");
 
     console.log("Sending email to:", options.email);
 
@@ -25,7 +29,7 @@ console.log("SMTP connection verified");
 
     console.log("Email sent:", info.messageId);
   } catch (err) {
-    console.error("Email sending failed:", err);
+    console.error("Email Error:", err);
     throw err;
   }
 };
