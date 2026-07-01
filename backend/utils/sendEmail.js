@@ -3,6 +3,8 @@ import nodemailer from "nodemailer";
 const sendEmail = async (options) => {
   try {
     console.log("Connecting to Gmail...");
+    await transporter.verify();
+console.log("SMTP connection verified");
 
     const transporter = nodemailer.createTransport({
       service: "gmail",
