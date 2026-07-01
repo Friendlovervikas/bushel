@@ -1,7 +1,7 @@
 import { Link, useNavigate } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
 import { useState } from "react";
-import axios from "axios";
+import API from "../services/api";
 import { useAuth } from "../context/AuthContext";
 import { useGoogleLogin } from "@react-oauth/google";
 
@@ -20,8 +20,8 @@ function Login() {
     try {
       setLoading(true);
 
-      const { data } = await axios.post(
-  "https://bushel-backend.onrender.com/api/auth/login",
+      const { data } = await API.post(
+  "/auth/login",
   {
     email: loginId,
     password,
@@ -68,7 +68,7 @@ function Login() {
   const googleSuccess = async (credentialResponse) => {
   try {
     const { data } = await axios.post(
-      "https://bushel-backend.onrender.com/api/auth/google-login",
+      "/auth/google-login",
       {
         credential: credentialResponse.credential,
       }
@@ -112,7 +112,7 @@ const googleLogin = useGoogleLogin({
   onSuccess: async (tokenResponse) => {
     try {
       const { data } = await axios.post(
-        "http://localhost:5001/api/auth/google-login",
+        "/auth/google-login",
         {
           accessToken: tokenResponse.access_token,
         }
