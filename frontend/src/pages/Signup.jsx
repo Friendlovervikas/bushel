@@ -1,6 +1,6 @@
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
-import axios from "axios";
+import API from "../services/api";
 import { useAuth } from "../context/AuthContext";
 import { FcGoogle } from "react-icons/fc";
 import { useGoogleLogin } from "@react-oauth/google";
@@ -38,9 +38,9 @@ function Signup() {
     try {
       setLoading(true);
 
-      const { data } = await axios.post(
+      const { data } = await API.post(
         await axios.post(
-  "https://bushel-backend.onrender.com/api/auth/register",
+ "/auth/register",
         {
           name,
           phone,
@@ -73,8 +73,8 @@ function Signup() {
 
   onSuccess: async (tokenResponse) => {
     try {
-      const { data } = await axios.post(
-        "https://bushel-backend.onrender.com/api/auth/google-login"
+      const { data } = await API.post(
+      "/auth/google-login",
         {
           accessToken: tokenResponse.access_token,
         }
