@@ -1,18 +1,13 @@
-import axios from "axios";
-
 import API from "./api";
 
 // ================= GET DASHBOARD =================
 
 export const getDashboardStats = async (token) => {
-  const { data } = await axios.get(
-    `${API}/stats`,
-    {
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-    }
-  );
+  const { data } = await API.get("/admin/stats", {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  });
 
   return data;
 };
@@ -20,14 +15,11 @@ export const getDashboardStats = async (token) => {
 // ================= GET CUSTOMERS =================
 
 export const getCustomers = async (token) => {
-  const { data } = await axios.get(
-    `${API}/customers`,
-    {
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-    }
-  );
+  const { data } = await API.get("/admin/customers", {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  });
 
   return data;
 };
@@ -35,14 +27,11 @@ export const getCustomers = async (token) => {
 // ================= GET ORDERS =================
 
 export const getRecentOrders = async (token) => {
-  const { data } = await axios.get(
-    `${API}/orders`,
-    {
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-    }
-  );
+  const { data } = await API.get("/admin/orders", {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  });
 
   return data;
 };
@@ -50,31 +39,27 @@ export const getRecentOrders = async (token) => {
 // ================= GET PAYMENTS =================
 
 export const getRecentPayments = async (token) => {
-  const { data } = await axios.get(
-    `${API}/payments`,
-    {
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-    }
-  );
+  const { data } = await API.get("/admin/payments", {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  });
 
   return data;
 };
+
 // ================= GET ANALYTICS =================
 
 export const getAnalytics = async (token) => {
-  const { data } = await axios.get(
-    `${API}/analytics`,
-    {
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-    }
-  );
+  const { data } = await API.get("/admin/analytics", {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  });
 
   return data;
 };
+
 // ================= UPDATE CUSTOMER =================
 
 export const updateCustomer = async (
@@ -82,8 +67,8 @@ export const updateCustomer = async (
   customerData,
   token
 ) => {
-  const { data } = await axios.put(
-    `${API}/customers/${id}`,
+  const { data } = await API.put(
+    `/admin/customers/${id}`,
     customerData,
     {
       headers: {
@@ -101,8 +86,8 @@ export const deleteCustomer = async (
   id,
   token
 ) => {
-  const { data } = await axios.delete(
-    `${API}/customers/${id}`,
+  const { data } = await API.delete(
+    `/admin/customers/${id}`,
     {
       headers: {
         Authorization: `Bearer ${token}`,
