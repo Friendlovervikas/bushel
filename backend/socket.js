@@ -2,11 +2,18 @@ import { Server } from "socket.io";
 
 let io;
 
+const allowedOrigins = [
+  "http://localhost:5173",
+  "https://bushel-jet.vercel.app",
+  "https://generationspecial.com",
+];
+
 export const initSocket = (server) => {
   io = new Server(server, {
     cors: {
-      origin: "http://localhost:5173",
-      methods: ["GET", "POST"],
+      origin: allowedOrigins,
+      methods: ["GET", "POST", "PUT", "DELETE"],
+      credentials: true,
     },
   });
 
@@ -19,23 +26,18 @@ export const initSocket = (server) => {
     });
 
     socket.on("disconnect", () => {
-      console.log("Socket Disconnected");
+      console.log("Socket Disconnected:", socket.id);
     });
   });
 };
 
 export const getIO = () => io;
 
-// ================= SEND NOTIFICATION =================
+export const sendNotification = (userId, notification) => {
+  if (!io) {
+    console.log("Socket.IO is not initialized");
+    return;
+  }
 
-export const sendNotification = (
-  userId,
-  notification
-) => {
-  if (!io) return;
-
-  io.to(userId.toString()).emit(
-    "notification",
-    notification
-  );
+  io.to(userId.toString()).emit("notification", notification);
 };
